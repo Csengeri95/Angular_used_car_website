@@ -1,0 +1,424 @@
+{
+  "back": "Vissza",
+  "next": "Következő",
+  "send": "Küldés",
+  "personalData": "Személyes adatok",
+  "stepperError": "Minden mezőt töltsön ki!",
+  "name": "Név",
+  "namePlaceholder": "Kovács Péter",
+  "nameError": "A Név mező kitöltése kötelező!",
+  "email": "E-mail",
+  "emailPlaceholder": "valaki@example.com",
+  "emailError": "Az E-mail mező kitöltése kötelező!",
+  "emailValidation": "Érvénytelen e-mail cím!",
+  "phone": "Telefonszám",
+  "phoneValidation": "Érvénytelen telefonszám!",
+  "productAdvertised": "Hirdetni kívánt termék",
+  "type": "Típus",
+  "typeError": "Kérjük, válasszon típust!",
+  "carMake": "Gyártó",
+  "carMakeError": "A Gyártó mező kitöltése kötelező!",
+  "model": "Modell",
+  "modelError": "A Modell mező kitöltése kötelező!",
+  "bodyType": "Kivitel",
+  "bodyTypeError": "Kérjük, válasszon Kivitel típust!",
+  "condition": "Állapot",
+  "conditionError": "Kérjük, válasszon állapotot!",
+  "vehicleData": "Jármű adatok",
+  "year": "Évjárat",
+  "yearError": "Az Évjárat mező kitöltése kötelező!",
+  "fuelType": "Üzemanyag",
+  "fuelTypeError": "Az Üzemanyag mező kitöltése kötelező!",
+  "transmission": "Sebességváltó",
+  "transmissionError": "A Sebességváltó mező kitöltése kötelező!",
+  "engineSizeElectronic": "Motor teljesítménye (kW)",
+  "engineSizeNonElectronic": "Hengerűrtartalom",
+  "engineSizeError": "Kérjük, adja meg a motor teljesítményét!",
+  "engineSizeValidation": "Kérjük, ne adjon meg negatív számot!",
+  "mileage": "Kilométeróra állása",
+  "mileageError": "Kérjük, adja meg a kilométeróra állását!",
+  "mileageValidation": "Kérjük, ne adjon meg negatív számot!",
+  "color": "Szín",
+  "colorError": "A Szín mező kitöltése kötelező!",
+  "colorValidation": "Csak betűket írjon!",
+  "moreInformation": "További információk",
+  "feature": "Extrák",
+  "featuresMore": "többi",
+  "featureError": "Az Extrák mező kitöltése kötelező!",
+  "location": "Város",
+  "locationError": "A Város mező kitöltése kötelező!",
+  "locationValidation": "Csak betűket írjon!",
+  "desiredPrice": "Kívánt ár",
+  "desiredPriceError": "Kérjük, adja meg a kívánt árat!",
+  "desiredPriceValidation": "Kérjük, ne adjon meg negatív számot!",
+  "upload": "Még feltölthet",
+  "uploadMore": "további képeket.",
+  "uploadImages": "Képek feltöltése",
+  "uploadErrorMessageSize": "A fájlméret túl nagy. Maximum 5 MB engedélyezett!",
+  "uploadErrorMessageFormat": "Érvénytelen fájlformátum. Csak JPG, JPEG és PNG engedélyezett!",
+  "uploadErrorMessageLength": "Csak 3 képet választhat ki!",
+  "releaseDate": "Feladás",
+
+  "services": "Szolgáltatások",
+  "usefulInformation": "Hasznos Információk",
+  "postAnAdd": "Hirdetésfeladás",
+  "newAdd": "Új hirdetés",
+  "successMessage": "Sikeres adatrögzítés!",
+  "failure": "Hiba",
+  "errorMessage": "Az adatrögzítés sikertelen volt! Próbálja újra!",
+
+  "search": "Keresés",
+  "from": "-tól",
+  "to": "-ig",
+  "price": "Ár",
+  "noMatches": "Nincs találat!",
+  "priceValidation": "Kérjük, ne adjon meg negatív számot!",
+  "priceError": "A maximum érték kevesebb, mint a minimum érték!",
+
+  "searchTerms": "Keresési feltételek törlése!",
+  "like": "Like",
+  "share": "Megosztás",
+  "reportAdvertisement": "Hirdetés jelentése",
+  "shareAdvertisement": "Hirdetés megosztása",
+  "printAdvertisement": "Hirdetés nyomtatása",
+  "favorites": "Kedvencek",
+  "facilities": "Felszereltség",
+  "data": "Adatok",
+  "basicData": "Alap adatok",
+  "costs": "Költségek",
+  "engineData": "Motor adatok",
+  "sellerDetails": "Eladó adatai",
+  "offersByType": "Ajánlatok típus alapján",
+  "sorryRecommended": "Sajnos nincs ajánlott hirdetés",
+
+  "types": [
+    {
+      "value": "car",
+      "viewValue": "Személygépkocsi"
+    },
+
+    {
+      "value": "light_commercial_vehicle",
+      "viewValue": "Kishaszonjármű"
+    },
+
+    {
+      "value": "commercial_vehicle",
+      "viewValue": "Haszonjármű"
+    },
+
+    {
+      "value": "motorcycle",
+      "viewValue": "Motorkerékpár"
+    }
+  ],
+
+  "bodyTypes": [
+    {
+      "value": "sedan",
+      "viewValue": "Sedan",
+      "motor": false
+    },
+
+    {
+      "value": "combi",
+      "viewValue": "Kombi",
+      "motor": false
+    },
+
+    {
+      "value": "hatchback",
+      "viewValue": "Ferdehátú",
+      "motor": false
+    },
+
+    {
+      "value": "minivan",
+      "viewValue": "Egyterű",
+      "motor": false
+    },
+
+    {
+      "value": "coupe",
+      "viewValue": "Coupe",
+      "motor": false
+    },
+
+    {
+      "value": "cabrio",
+      "viewValue": "Cabrio",
+      "motor": false
+    },
+    {
+      "value": "jeep",
+      "viewValue": "Terepjáró",
+      "motor": false
+    },
+
+    {
+      "value": "suv",
+      "viewValue": "Városi terepjáró",
+      "motor": false
+    },
+
+    {
+      "value": "pickup",
+      "viewValue": "Pickup",
+      "motor": false
+    },
+
+    {
+      "value": "moped",
+      "viewValue": "Moped",
+      "motor": true
+    },
+
+    {
+      "value": "cruiser",
+      "viewValue": "Cruiser",
+      "motor": true
+    },
+
+    {
+      "value": "scooter",
+      "viewValue": "Robogó",
+      "motor": true
+    },
+
+    {
+      "value": "cross",
+      "viewValue": "Cross",
+      "motor": true
+    },
+
+    {
+      "value": "quad",
+      "viewValue": "Quad",
+      "motor": true
+    },
+
+    {
+      "value": "racing",
+      "viewValue": "Versenymotor",
+      "motor": true
+    }
+  ],
+
+  "conditions": [
+    {
+      "value": "used",
+      "viewValue": "Használt"
+    },
+
+    {
+      "value": "new",
+      "viewValue": "Új"
+    },
+
+    {
+      "value": "salvage",
+      "viewValue": "Sérült"
+    },
+
+    {
+      "value": "mint",
+      "viewValue": "Újszerű"
+    }
+  ],
+
+  "fuelTypes": [
+    {
+      "value": "gasoline",
+      "viewValue": "Benzin"
+    },
+
+    {
+      "value": "diesel",
+      "viewValue": "Dízel"
+    },
+
+    {
+      "value": "gasoline_gas",
+      "viewValue": "Benzin/Gáz"
+    },
+
+    {
+      "value": "diesel_gas",
+      "viewValue": "Dízel/Gáz"
+    },
+
+    {
+      "value": "hybrid",
+      "viewValue": "Hibrid"
+    },
+
+    {
+      "value": "hybrid_gasoline",
+      "viewValue": "Hibrid/Benzin"
+    },
+
+    {
+      "value": "hybrid_diesel",
+      "viewValue": "Hibrid/Dízel"
+    },
+
+    {
+      "value": "electronic",
+      "viewValue": "Elektromos"
+    },
+
+    {
+      "value": "ethanol",
+      "viewValue": "Etanol"
+    },
+
+    {
+      "value": "biodiesel",
+      "viewValue": "Biodízel"
+    },
+
+    {
+      "value": "gas",
+      "viewValue": "Gáz"
+    }
+  ],
+
+  "transTypes": [
+    {
+      "value": "manual",
+      "viewValue": "Manuális Sebességváltó"
+    },
+
+    {
+      "value": "automatic",
+      "viewValue": "Automata Sebességváltó"
+    },
+
+    {
+      "value": "cvt",
+      "viewValue": "Folyamatosan Változtatható Sebességváltó"
+    },
+
+    {
+      "value": "sat",
+      "viewValue": "Félautomata Sebességváltó"
+    },
+
+    {
+      "value": "dct",
+      "viewValue": "Dupla Kuplungos Sebességváltó"
+    },
+
+    {
+      "value": "amt",
+      "viewValue": "Automatizált Kézi Sebességváltó"
+    },
+
+    {
+      "value": "ev",
+      "viewValue": "Elektromos Jármű Sebességváltó"
+    },
+
+    {
+      "value": "none",
+      "viewValue": "Nincs Sebességváltó"
+    }
+  ],
+
+  "features": [
+    {
+      "value": "clima",
+      "viewValue": "Klíma"
+    },
+
+    {
+      "value": "abs",
+      "viewValue": "ABS"
+    },
+
+    {
+      "value": "alloy_wheels",
+      "viewValue": "Alufelni"
+    },
+
+    {
+      "value": "airbags",
+      "viewValue": "Légzsák"
+    },
+
+    {
+      "value": "bluetooth",
+      "viewValue": "Bluetooth"
+    },
+
+    {
+      "value": "tempomat",
+      "viewValue": "Sebességtartó automatika (Tempomat)"
+    },
+
+    {
+      "value": "power_windows",
+      "viewValue": "Elektromos ablakok"
+    },
+
+    {
+      "value": "power_door_locks",
+      "viewValue": "Elektromos ajtózárak"
+    },
+
+    {
+      "value": "gps",
+      "viewValue": "GPS navigációs rendszer"
+    },
+
+    {
+      "value": "parking_sensors",
+      "viewValue": "Parkoló szenzorok"
+    },
+
+    {
+      "value": "sunroof",
+      "viewValue": "Napfénytető"
+    },
+
+    {
+      "value": "heated_seats",
+      "viewValue": "Fűthető ülések"
+    },
+
+    {
+      "value": "lane_departure_warning",
+      "viewValue": "Sávtartó rendszer"
+    },
+
+    {
+      "value": "aeb",
+      "viewValue": "Automatikus vészfékezés (AEB)"
+    },
+
+    {
+      "value": "satellite_radio",
+      "viewValue": "Műholdas rádió"
+    },
+
+    {
+      "value": "usb_ports",
+      "viewValue": "USB portok"
+    },
+
+    {
+      "value": "apple_carplay_android_auto",
+      "viewValue": "Apple CarPlay/Android Auto támogatás"
+    },
+
+    {
+      "value": "power_mirrors",
+      "viewValue": "Elektromos tükrök"
+    },
+
+    {
+      "value": "heated_steering_wheel",
+      "viewValue": "Fűthető kormánykerék"
+    }
+  ]
+}

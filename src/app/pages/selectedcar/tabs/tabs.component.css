@@ -1,0 +1,27 @@
+.icon {
+    font-size: 8px;
+    color: #000 !important;
+}
+
+.label {
+    font-weight: bold;
+}
+
+.tab-icon {
+    margin-right: 8px;
+}
+
+.title {
+    margin-bottom: 5px;
+}
+
+@media (max-width: 768px) {
+    .label {
+        font-size: 14px;
+    }
+
+    .value {
+        font-size: 14px;
+    }
+
+}

@@ -1,0 +1,152 @@
+<form [formGroup]="additionalData">
+  <div class="container flex">
+    <mat-form-field>
+      <mat-label>{{
+        translationService.translate.get("feature") | async
+      }}</mat-label>
+
+      <mat-select formControlName="featuresCtrl" multiple>
+        <mat-select-trigger>
+          {{ getSelectedFeatures() }}
+        </mat-select-trigger>
+
+        <mat-option *ngFor="let feature of features" [value]="feature.value">
+          {{ feature.viewValue }}
+        </mat-option>
+      </mat-select>
+
+      <mat-error
+        *ngIf="
+          additionalData.controls['featuresCtrl'].hasError('required') &&
+          additionalData.controls['featuresCtrl'].invalid &&
+          (additionalData.controls['featuresCtrl'].dirty ||
+            additionalData.controls['featuresCtrl'].touched)
+        "
+      >
+        {{ translationService.translate.get("featureError") | async }}
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>{{
+        translationService.translate.get("location") | async
+      }}</mat-label>
+      <input type="text" matInput formControlName="locationCtrl" required />
+
+      <mat-error
+        *ngIf="
+          additionalData.controls['locationCtrl'].hasError('required') &&
+          (additionalData.controls['locationCtrl'].dirty ||
+            additionalData.controls['locationCtrl'].touched)
+        "
+      >
+        {{ translationService.translate.get("locationError") | async }}
+      </mat-error>
+
+      <mat-error
+        *ngIf="additionalData.controls['locationCtrl'].hasError('pattern')"
+      >
+        {{
+          translationService.translate.get("locationValidation") | async
+        }}
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field floatLabel="always">
+      <mat-label>{{
+        translationService.translate.get("desiredPrice") | async
+      }}</mat-label>
+      <input
+        class="price-right-align"
+        placeholder="0"
+        matInput
+        formControlName="priceCtrl"
+        required
+        currencyMask
+        [options]="{
+          precision: '',
+          decimal: '.',
+          thousands: '.',
+          prefix: ''
+        }"
+      />
+      <span matTextPrefix>Ft&nbsp;</span>
+
+      <mat-error
+        *ngIf="
+          additionalData.controls['priceCtrl'].hasError('required') &&
+          (additionalData.controls['priceCtrl'].dirty ||
+            additionalData.controls['priceCtrl'].touched)
+        "
+      >
+        {{
+          translationService.translate.get("desiredPriceError") | async
+        }}
+      </mat-error>
+
+      <mat-error *ngIf="additionalData.controls['priceCtrl'].hasError('min')">
+        {{
+          translationService.translate.get("desiredPriceValidation")
+            | async
+        }}
+      </mat-error>
+    </mat-form-field>
+
+    <div class="upload-container">
+      <p
+        style="text-align: center"
+        *ngIf="selectedFileName.length < maxUploads"
+      >
+        {{ translationService.translate.get("upload") | async }}
+        <span class="remaining_files">{{
+          maxUploads - selectedFileName.length
+        }}</span>
+        {{ translationService.translate.get("uploadMore") | async }}
+      </p>
+      <input
+        #fileInput
+        type="file"
+        style="display: none"
+        accept=".jpg, .jpeg, .png"
+        multiple
+        [size]="5000000"
+        (change)="onFileSelected($event)"
+      />
+      <button
+        *ngIf="selectedFileName.length < maxUploads"
+        mat-button
+        color="primary"
+        (click)="fileInput.click()"
+      >
+        <mat-icon>attach_file</mat-icon>
+        {{ translationService.translate.get("uploadImages") | async }}
+      </button>
+
+      <mat-chip-row
+        (removed)="remove(fileName)"
+        *ngFor="let fileName of selectedFileName; let i = index"
+      >
+        {{ i + 1 }}:
+        {{
+          fileName.length > maxTitleLength
+            ? fileName.slice(0, maxTitleLength - 4) + "..." + fileName.slice(-4)
+            : fileName
+        }}
+        <button matChipRemove [attr.aria-label]="'remove ' + fileName">
+          <mat-icon>cancel</mat-icon>
+        </button>
+      </mat-chip-row>
+
+      <mat-error *ngIf="errorMessage">{{ errorMessage }}</mat-error>
+    </div>
+  </div>
+
+  <div class="mt-1 stepper">
+    <button mat-button matStepperPrevious>
+      {{ translationService.translate.get("back") | async }}
+    </button>
+    <button mat-button color="primary" matStepperNext (click)="submitForm()">
+      {{ translationService.translate.get("send") | async }}
+    </button>
+  </div>
+</form>

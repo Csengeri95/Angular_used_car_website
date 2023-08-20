@@ -1,0 +1,51 @@
+<p-galleria
+  [value]="car?.imagesCtrl"
+  [showItemNavigators]="true"
+  [responsiveOptions]="responsiveOptions"
+  [numVisible]="5"
+  [circular]="true"
+  [activeIndex]="selectedImageIndex"
+>
+  <ng-template pTemplate="item" let-item>
+    <img
+      [src]="item.imageUrl"
+      style="width: 100%; display: block; cursor: pointer"
+      (click)="showImageFullscreen(item.imageUrl, item)"
+    />
+  </ng-template>
+  <ng-template pTemplate="thumbnail" let-item>
+    <div class="grid-nogutter justify-content-center">
+      <img [src]="item.imageUrl" class="thumbnail-image" />
+    </div>
+  </ng-template>
+</p-galleria>
+
+<p-galleria
+  [value]="car?.imagesCtrl"
+  [(visible)]="showFullscreenImage"
+  [responsiveOptions]="responsiveOptions"
+  [containerStyle]="{ 'max-width': '50%' }"
+  [numVisible]="9"
+  [circular]="true"
+  [fullScreen]="true"
+  [showItemNavigators]="true"
+  [activeIndex]="selectedImageIndex"
+>
+  <ng-template pTemplate="item" let-item>
+    <img
+      *ngIf="item"
+      [src]="item.imageUrl"
+      style="width: 100%; display: block"
+    />
+  </ng-template>
+
+  <ng-template pTemplate="thumbnail" let-item>
+    <div class="grid grid-nogutter justify-content-center">
+      <img
+        [src]="item.imageUrl"
+        style="display: block"
+        class="thumbnail-image"
+      />
+    </div>
+  </ng-template>
+</p-galleria>

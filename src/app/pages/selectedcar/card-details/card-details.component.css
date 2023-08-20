@@ -1,0 +1,10 @@
+.custom_title {
+    margin-top: -15px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.link {
+    color: #007bff;
+    cursor: pointer;
+}

@@ -1,0 +1,106 @@
+<div class="sidebar_container flex">
+  <h1 class="mb-1">
+    {{ translationService.translate.get("search") | async }}
+  </h1>
+  <form class="flex p-1" [formGroup]="sidebar">
+    <mat-form-field class="col-md-10 col-lg-7">
+      <mat-label>{{
+        translationService.translate.get("carMake") | async
+      }}</mat-label>
+      <mat-select formControlName="car_make" (selectionChange)="loadModels()">
+        <mat-option >Válasszon egyet!</mat-option>
+        <mat-option *ngFor="let item of cars" [value]="item.makes">
+          {{ item.makes }} ({{ item.quantity }})
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="col-md-10 col-lg-7">
+      <mat-label>{{
+        translationService.translate.get("model") | async
+      }}</mat-label>
+      <mat-select formControlName="modelCtrl">
+        <ng-container *ngIf="models.length === 0">
+          <mat-option>{{
+            translationService.translate.get("noMatches") | async
+          }}</mat-option>
+        </ng-container>
+        <mat-option *ngFor="let item of models" [value]="item.models">
+          {{ item.models }} ({{ item.quantity }})
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <div class="price_section flex">
+      <mat-form-field floatLabel="always" class="col-12 col-md-10 input">
+        <mat-label>{{
+          translationService.translate.get("price") | async
+        }}</mat-label>
+        <input
+          matInput
+          [placeholder]="translationService.translate.instant('from')"
+          formControlName="minPriceCtrl"
+          currencyMask
+          [options]="{
+            precision: '',
+            decimal: '.',
+            thousands: '.',
+            prefix: ''
+          }"
+        />
+        <span matTextPrefix>Ft&nbsp;</span>
+
+        <mat-error
+          class="flex mat_error"
+          *ngIf="sidebar.controls['minPriceCtrl'].hasError('min')"
+        >
+          {{
+            translationService.translate.get("priceValidation")
+              | async
+          }}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field floatLabel="always" class="col-12 col-md-10 input">
+        <input
+          matInput
+          [placeholder]="translationService.translate.instant('to')"
+          formControlName="maxPriceCtrl"
+          currencyMask
+          [options]="{
+            precision: '',
+            decimal: '.',
+            thousands: '.',
+            prefix: ''
+          }"
+        />
+        <span matTextPrefix>Ft&nbsp;</span>
+
+        <mat-error
+          class="flex mat_error"
+          *ngIf="sidebar.controls['maxPriceCtrl'].hasError('min')"
+        >
+          {{
+            translationService.translate.get("priceValidation")
+              | async
+          }}
+        </mat-error>
+
+        <mat-error
+          class="flex mat_error"
+          *ngIf="sidebar.hasError('maxPriceLessThanMin', 'maxPriceCtrl')"
+        >
+          {{
+            translationService.translate.get("priceError")
+              | async
+          }}
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <button mat-raised-button class="sidebar_button" (click)="applyFilters()">
+      <mat-icon>search</mat-icon>
+      {{ translationService.translate.get("search") | async }}!
+    </button>
+  </form>
+</div>

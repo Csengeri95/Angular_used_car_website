@@ -1,0 +1,110 @@
+<ng-container *ngIf="isLoading == true">
+  <mat-spinner style="margin: 100px auto 0" [diameter]="30"></mat-spinner>
+</ng-container>
+
+<ng-container *ngIf="isLoading == false">
+  <div class="home row">
+    <div class="col-12 col-md-3 col-lg-4 col-xl-3 p-1">
+      <app-siderbar
+        (searchPerformed)="onSearchPerformed($event)"
+        (shouldShowResetChip)="onShouldShowResetChip($event)"
+      ></app-siderbar>
+    </div>
+
+    <mat-chip
+      class="mt-2 ml-1 chip"
+      *ngIf="searchPerformed || shouldShowResetChip"
+      (click)="resetFilters()"
+    >
+      <button matChipRemove aria-label="remove" (click)="resetFilters()">
+        <mat-icon>cancel</mat-icon>
+      </button>
+      {{ translationService.translate.get("searchTerms") | async }}
+    </mat-chip>
+
+    <div class="home_container col-12 col-md-9 col-lg-8 col-xl-9 mt-1 p-1 row">
+      <div class="cards-container row">
+        <mat-card
+          class="card col-12"
+          (click)="
+            selectItem(
+              item.typeCtrl,
+              item.car_make,
+              item.modelCtrl,
+              item.car_id
+            )
+          "
+          *ngFor="
+            let item of dynamoDBService.filteredData
+              | slice : pageIndex * pageSize : (pageIndex + 1) * pageSize
+          "
+        >
+          <mat-card-header>
+            <mat-card-title-group>
+              <mat-card-title class="mat-card-title"
+                >{{ item.car_make }} {{ item.modelCtrl }}
+              </mat-card-title>
+              <mat-card-subtitle
+                >{{ translationService.translate.get("location") | async }}:
+                {{ item.locationCtrl }}</mat-card-subtitle
+              >
+              <mat-card-subtitle>
+                {{ translationService.translate.get("price") | async }}:
+                {{ formatNumber(item.priceCtrl) }}</mat-card-subtitle
+              >
+              <img
+                mat-card-md-image
+                [src]="item.imagesCtrl?.[0]?.imageUrl"
+                [alt]="item.car_make"
+                [title]="item.car_make"
+              />
+            </mat-card-title-group>
+          </mat-card-header>
+          <mat-card-content>
+            {{ translationService.translate.get("year") | async }}:
+            {{ item.yearCtrl }}
+          </mat-card-content>
+          <mat-card-actions>
+            <button
+              mat-icon-button
+              color="primary"
+              aria-label="Like"
+              [matTooltip]="translationService.translate.instant('like')"
+              [matTooltipPosition]="'above'"
+              (click)="$event.stopPropagation()"
+            >
+              <mat-icon style="font-size: 20px">thumb_up</mat-icon>
+            </button>
+            <button
+              mat-icon-button
+              color="primary"
+              [matTooltip]="translationService.translate.instant('share')"
+              [matTooltipPosition]="'above'"
+              (click)="$event.stopPropagation()"
+              aria-label="Share"
+            >
+              <mat-icon style="font-size: 20px">share</mat-icon>
+            </button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+
+      <div
+        class="paginator-container flex col-12 mt-1"
+        style="justify-content: space-around; height: 100%"
+      >
+        <mat-paginator
+          [length]="length"
+          [pageSize]="pageSize"
+          [pageIndex]="pageIndex"
+          (page)="handlePageEvent($event)"
+          [showFirstLastButtons]="showFirstLastButtons"
+          [pageSizeOptions]="showPageSizeOptions ? pageSizeOptions : []"
+          [hidePageSize]="hidePageSize"
+          aria-label="Select page"
+        >
+        </mat-paginator>
+      </div>
+    </div>
+  </div>
+</ng-container>

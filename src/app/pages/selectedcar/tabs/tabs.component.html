@@ -1,0 +1,241 @@
+<mat-tab-group dynamicHeight>
+  <!-- Tab 1: Adatok -->
+
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon class="tab-icon">info</mat-icon>
+      {{ translationService.getTranslation("data") | async }}
+    </ng-template>
+
+    <div class="mt-1">
+      <section>
+        <h3 class="title">
+          {{ translationService.getTranslation("costs") | async }}
+        </h3>
+        <mat-divider></mat-divider>
+        <mat-list>
+          <mat-list-item fxLayout="row">
+            <div fxFlex="20" fxLayoutAlign="start center" matLine class="label">
+              {{ translationService.getTranslation("price") | async }}:
+            </div>
+            <div
+              fxFlex="80"
+              fxFlexOffset="10"
+              fxLayoutAlign="end center"
+              matLine
+              class="value"
+            >
+              {{ formatNumber(car!.priceCtrl) }}
+            </div>
+          </mat-list-item>
+        </mat-list>
+      </section>
+
+      <section>
+        <h3 class="title">
+          {{ translationService.getTranslation("basicData") | async }}
+        </h3>
+        <mat-divider></mat-divider>
+        <mat-list>
+          <mat-list-item fxLayout="row">
+            <div fxFlex="20" fxLayoutAlign="start center" matLine class="label">
+              {{ translationService.getTranslation("year") | async }}:
+            </div>
+            <div
+              fxFlex="80"
+              fxFlexOffset="10"
+              fxLayoutAlign="end center"
+              matLine
+              class="value"
+            >
+              {{ car?.yearCtrl }}
+            </div>
+          </mat-list-item>
+          <mat-list-item fxLayout="row">
+            <div fxFlex="20" fxLayoutAlign="start center" matLine class="label">
+              {{ translationService.getTranslation("condition") | async }}:
+            </div>
+            <div
+              fxFlex="80"
+              fxFlexOffset="10"
+              fxLayoutAlign="end center"
+              matLine
+              class="value"
+            >
+              {{ getValue("conditions", car?.conditionCtrl) }}
+            </div>
+          </mat-list-item>
+
+          <mat-list-item fxLayout="row">
+            <div fxFlex="20" fxLayoutAlign="start center" matLine class="label">
+              {{ translationService.getTranslation("bodyType") | async }}:
+            </div>
+            <div
+              fxFlex="80"
+              fxFlexOffset="10"
+              fxLayoutAlign="end center"
+              matLine
+              class="value"
+            >
+              {{ getValue("bodyTypes", car?.bodyTypeCtrl) }}
+            </div>
+          </mat-list-item>
+
+          <mat-list-item fxLayout="row">
+            <div fxFlex="20" fxLayoutAlign="start center" matLine class="label">
+              {{ translationService.getTranslation("releaseDate") | async }}:
+            </div>
+            <div
+              fxFlex="80"
+              fxFlexOffset="10"
+              fxLayoutAlign="end center"
+              matLine
+              class="value"
+            >
+              {{ date(car!.release_date) }}
+            </div>
+          </mat-list-item>
+        </mat-list>
+      </section>
+
+      <section>
+        <h3 class="title">
+          {{ translationService.getTranslation("vehicleData") | async }}
+        </h3>
+        <mat-divider></mat-divider>
+        <mat-list>
+          <mat-list-item fxLayout="row">
+            <div fxFlex="20" fxLayoutAlign="start center" matLine class="label">
+              {{ translationService.getTranslation("mileage") | async }}:
+            </div>
+            <div
+              fxFlex="80"
+              fxFlexOffset="10"
+              fxLayoutAlign="end center"
+              matLine
+              class="value"
+            >
+              {{ transformValue(car!.mileageCtrl) }} km
+            </div>
+          </mat-list-item>
+          <mat-list-item fxLayout="row">
+            <div fxFlex="20" fxLayoutAlign="start center" matLine class="label">
+              {{ translationService.getTranslation("color") | async }}:
+            </div>
+            <div
+              fxFlex="80"
+              fxFlexOffset="10"
+              fxLayoutAlign="end center"
+              matLine
+              class="value"
+            >
+              {{ car?.colorCtrl }}
+            </div>
+          </mat-list-item>
+
+          <mat-list-item fxLayout="row">
+            <div fxFlex="20" fxLayoutAlign="start center" matLine class="label">
+              {{ translationService.getTranslation("type") | async }}:
+            </div>
+            <div
+              fxFlex="80"
+              fxFlexOffset="10"
+              fxLayoutAlign="end center"
+              matLine
+              class="value"
+            >
+              {{ getValue("types", car?.typeCtrl) }}
+            </div>
+          </mat-list-item>
+        </mat-list>
+      </section>
+
+      <section>
+        <h3 class="title">
+          {{ translationService.getTranslation("engineData") | async }}
+        </h3>
+        <mat-divider></mat-divider>
+        <mat-list>
+          <mat-list-item fxLayout="row">
+            <div fxFlex="20" fxLayoutAlign="start center" matLine class="label">
+              {{ translationService.getTranslation("transmission") | async }}:
+            </div>
+            <div
+              fxFlex="80"
+              fxFlexOffset="10"
+              fxLayoutAlign="end center"
+              matLine
+              class="value"
+            >
+              {{ getValue("transTypes", car?.transTypeCtrl) }}
+            </div>
+          </mat-list-item>
+
+          <mat-list-item fxLayout="row">
+            <div fxFlex="20" fxLayoutAlign="start center" matLine class="label">
+              {{ translationService.getTranslation("fuelType") | async }}:
+            </div>
+            <div
+              fxFlex="80"
+              fxFlexOffset="10"
+              fxLayoutAlign="end center"
+              matLine
+              class="value"
+            >
+              {{ getValue("fuelTypes", car?.fuelTypeCtrl) }}
+            </div>
+          </mat-list-item>
+
+          <mat-list-item fxLayout="row">
+            <div fxFlex="20" fxLayoutAlign="start center" matLine class="label">
+              {{
+                car?.fuelTypeCtrl === "electronic"
+                  ? (translationService.getTranslation("engineSizeElectronic")
+                    | async)
+                  : (translationService.getTranslation(
+                      "engineSizeNonElectronic"
+                    ) | async)
+              }}:
+            </div>
+
+            <div
+              fxFlex="80"
+              fxFlexOffset="10"
+              fxLayoutAlign="end center"
+              matLine
+              class="value"
+            >
+              {{ car?.engineSizeCtrl }}
+              {{ car?.fuelTypeCtrl === "electronic" ? "Kw" : "cm³" }}
+            </div>
+          </mat-list-item>
+        </mat-list>
+      </section>
+    </div>
+  </mat-tab>
+
+  <!-- Tab 2: Felszereltség -->
+
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon class="tab-icon">directions_car</mat-icon>
+      {{ translationService.getTranslation("facilities") | async }}
+    </ng-template>
+
+    <div class="mt-1">
+      <mat-list>
+        <mat-list-item *ngFor="let item of car?.featuresCtrl" fxLayout="row">
+          <mat-icon class="icon" matListItemIcon>lens</mat-icon>
+
+          <div fxLayoutAlign="start center" matLine class="value">
+            {{ getValue("features", item) }}
+          </div>
+        </mat-list-item>
+      </mat-list>
+    </div>
+  </mat-tab>
+
+  <!-- Tab 3: Példa -->
+
+  <!-- <mat-tab label="Valami">Példa</mat-tab> -->
+</mat-tab-group>

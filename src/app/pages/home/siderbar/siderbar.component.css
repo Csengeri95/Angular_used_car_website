@@ -1,0 +1,50 @@
+.sidebar_container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar_container form {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .sidebar_container form .select {
+    max-width: 200px; 
+    align-self: center;
+    
+} */
+
+
+.sidebar_container .price_section {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.sidebar_container .price_section .input {
+    max-width: 190px;
+    margin: 8px;
+}
+
+.sidebar_container .price_section .mat_error {
+    justify-content: center;
+    text-align: center;
+}
+
+.sidebar_container .sidebar_button {
+    background-color: var(--green-color);
+    color: #fefefe;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.sidebar_container .sidebar_button:hover {
+    background-color: var(--green-color-shade) !important;
+}
+
+@media screen and (min-width:768px) and (max-width: 862px) {
+   
+}

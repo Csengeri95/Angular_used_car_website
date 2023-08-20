@@ -1,0 +1,28 @@
+<mat-card
+  class="card col-12 col-lg-11 col-xl-12 col-xxl-9 p-1"
+  fxLayout="row"
+  fxLayoutAlign="center center"
+>
+  <div class="item flex p-1" fxLayout="column" fxLayoutAlign="center center">
+    <mat-icon class="icon warning">warning</mat-icon>
+    <p>
+      {{ translationService.getTranslation("reportAdvertisement") | async }}
+    </p>
+  </div>
+  <mat-divider [vertical]="true"></mat-divider>
+
+  <div class="item flex p-1" fxLayout="column" fxLayoutAlign="center center">
+    <mat-icon class="icon" color="primary">share</mat-icon>
+    <p>{{ translationService.getTranslation("shareAdvertisement") | async }}</p>
+  </div>
+  <mat-divider [vertical]="true"></mat-divider>
+  <div class="item flex p-1" fxLayout="column" fxLayoutAlign="center center">
+    <mat-icon class="icon">local_printshop</mat-icon>
+    <p>{{ translationService.getTranslation("printAdvertisement") | async }}</p>
+  </div>
+  <mat-divider [vertical]="true"></mat-divider>
+  <div class="item flex p-1" fxLayout="column" fxLayoutAlign="center center">
+    <mat-icon class="icon">star_border</mat-icon>
+    <p>{{ translationService.getTranslation("favorites") | async }}</p>
+  </div>
+</mat-card>

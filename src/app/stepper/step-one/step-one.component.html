@@ -1,0 +1,79 @@
+<form [formGroup]="personal">
+  <mat-form-field>
+    <mat-label>{{
+      translationService.translate.get("name") | async
+    }}</mat-label>
+    <input
+      type="text"
+      matInput
+      [placeholder]="
+        translationService.translate.instant('namePlaceholder')
+      "
+      formControlName="nameCtrl"
+      required
+    />
+
+    <mat-error
+      *ngIf="
+        personal.controls['nameCtrl'].invalid &&
+        (personal.controls['nameCtrl'].dirty ||
+          personal.controls['nameCtrl'].touched)
+      "
+    >
+      {{ translationService.translate.get("nameError") | async }}
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>{{
+      translationService.translate.get("email") | async
+    }}</mat-label>
+    <input
+      type="email"
+      matInput
+      [placeholder]="
+        translationService.translate.instant('emailPlaceholder')
+      "
+      formControlName="emailCtrl"
+      required
+    />
+    <mat-error
+      *ngIf="
+        personal.controls['emailCtrl'].hasError('required') &&
+        (personal.controls['emailCtrl'].dirty ||
+          personal.controls['emailCtrl'].touched)
+      "
+    >
+      {{ translationService.translate.get("emailError") | async }}
+    </mat-error>
+
+    <mat-error
+      *ngIf="
+        personal.controls['emailCtrl'].hasError('email') &&
+        (personal.controls['emailCtrl'].dirty ||
+          personal.controls['emailCtrl'].touched)
+      "
+    >
+      {{ translationService.translate.get("emailValidation") | async }}
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>
+      {{
+        translationService.translate.get("phone") | async
+      }}
+    </mat-label>
+    <input type="tel" matInput placeholder="+36" formControlName="telCtrl" />
+
+    <mat-error *ngIf="personal.controls['telCtrl'].hasError('pattern')">
+      {{ translationService.translate.get("phoneValidation") | async }}
+    </mat-error>
+  </mat-form-field>
+
+  <div class="mt-1">
+    <button mat-button matStepperNext (click)="onStepOneNext()">
+      {{ translationService.translate.get("next") | async }}
+    </button>
+  </div>
+</form>

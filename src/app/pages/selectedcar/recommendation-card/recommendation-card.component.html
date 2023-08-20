@@ -1,0 +1,52 @@
+<mat-card class="col-12 col-lg-9 col-xl-8">
+  <mat-card-header>
+    <mat-card-title class="card_title">
+      {{ translationService.getTranslation("offersByType") | async }}
+    </mat-card-title>
+  </mat-card-header>
+  <div
+    fxLayout="row wrap"
+    fxLayoutGap="16px"
+    fxLayoutAlign="center center"
+    *ngIf="
+      this.dynamoDBService.firstTenRecommendedCars.length > 0;
+      else noRecommendedCars
+    "
+  >
+    <mat-card
+      fxFlex="calc(50% - 16px)"
+      class="custom_card mb-1"
+      style="cursor: pointer"
+      (click)="
+        selectItem(item.typeCtrl, item.car_make, item.modelCtrl, item.car_id)
+      "
+      *ngFor="let item of this.dynamoDBService.firstTenRecommendedCars"
+    >
+      <mat-card-header>
+        <mat-card-title-group>
+          <mat-card-title class="custom_card_title"
+            >{{ item.car_make }} - {{ item.modelCtrl }}</mat-card-title
+          >
+          <mat-card-subtitle class="price">{{
+            formatNumber(item.priceCtrl)
+          }}</mat-card-subtitle>
+        </mat-card-title-group>
+      </mat-card-header>
+      <mat-card-content>
+        <img
+          mat-card-image
+          [src]="item.imagesCtrl?.[0]?.imageUrl"
+          [alt]="item.car_make"
+          [title]="item.car_make"
+        />
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <ng-template #noRecommendedCars>
+    <div class="mb-1" fxLayout="column" fxLayoutAlign="center center">
+      <p>{{ translationService.getTranslation("sorryRecommended") | async }}</p>
+      <mat-icon style="font-size: 26px">sentiment_very_dissatisfied</mat-icon>
+    </div>
+  </ng-template>
+</mat-card>

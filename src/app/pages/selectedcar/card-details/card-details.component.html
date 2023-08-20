@@ -1,0 +1,25 @@
+<mat-card class="card col-12 col-md-9 col-lg-9 col-xl-8 p-1 mt-1">
+  <mat-card-header>
+    <mat-card-title-group>
+      <mat-card-title class="custom_title"
+        >{{ translationService.getTranslation("sellerDetails") | async }}
+      </mat-card-title>
+
+      <mat-card-subtitle>
+        <mat-icon>person</mat-icon>
+        {{ car?.nameCtrl }}
+      </mat-card-subtitle>
+
+      <mat-card-subtitle>
+        <mat-icon>smartphone</mat-icon>
+        <a class="link" (click)="togglePhoneNumber()">
+          {{ car?.telCtrl ? formatNumber(car!.telCtrl) : "" }}
+        </a>
+      </mat-card-subtitle>
+      <mat-card-subtitle>
+        <mat-icon> location_on</mat-icon>
+        {{ car?.locationCtrl }}
+      </mat-card-subtitle>
+    </mat-card-title-group>
+  </mat-card-header>
+</mat-card>

@@ -1,0 +1,7 @@
+.pageNotFound {
+    min-height: 80vh;
+}
+
+.pageNotFound h1 {
+    color: var(--danger-color);
+}

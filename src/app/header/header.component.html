@@ -1,0 +1,61 @@
+<div class="header">
+  <div class="container col-12 flex p-1">
+    <div class="logo mr-1">
+      <app-logo></app-logo>
+    </div>
+
+    <div class="burger mr-1" (click)="toggleMenu()">
+      <i class="material-icons"> {{ isOpen ? "close" : "menu" }} </i>
+    </div>
+
+    <div class="menu flex mr-1" [class.isOpen]="isOpen">
+      <a class="p-1" (click)="toggleMenu()"
+        >{{ translationService.translate.get("services") | async }}
+      </a>
+      <a class="p-1" (click)="toggleMenu()">{{
+        translationService.translate.get("usefulInformation") | async
+      }}</a>
+
+      <div class="addPlus flex p-1 ml-1" (click)="showDialog()">
+        <mat-icon class="custom-icon">add_circle_outline</mat-icon>
+        <p>{{ translationService.translate.get("postAnAdd") | async }}</p>
+      </div>
+
+      <p-dialog
+        [header]="translationService.translate.instant('newAdd')"
+        [(visible)]="visible"
+        [modal]="false"
+        [breakpoints]="{ '960px': '75vw', '768px': '90vw', '576px': '95vw' }"
+        [style]="{ width: '75vw' }"
+        [draggable]="true"
+        [resizable]="false"
+      >
+        <app-stepper
+          (toggleMenu)="toggleMenu()"
+          (closeDialog)="closeDialog()"
+          (showSuccessToast)="showSuccessToast()"
+          (showErrorToast)="showErrorToast()"
+        ></app-stepper>
+      </p-dialog>
+      <p-toast position="top-center" key="tc"></p-toast>
+      <div class="languages flex">
+        <img
+          src="assets/GB.png"
+          alt="GB"
+          title="GB"
+          width="30"
+          height="20"
+          (click)="changeLanguage('en')"
+        />
+        <img
+          src="assets/HU.png"
+          alt="HU"
+          title="HU"
+          width="30"
+          height="20"
+          (click)="changeLanguage('hu')"
+        />
+      </div>
+    </div>
+  </div>
+</div>

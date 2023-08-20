@@ -1,0 +1,402 @@
+{
+  "back": "Previous",
+  "next": "Next",
+  "send": "Send",
+  "personalData": "Personal data",
+  "stepperError": "Fill it all in!",
+  "name": "Name",
+  "namePlaceholder": "John Doe",
+  "nameError": "The Name field is mandatory!",
+  "email": "E-mail",
+  "emailPlaceholder": "somebody@example.com",
+  "emailError": "The E-mail field is mandatory!",
+  "emailValidation": "Invalid E-mail address!",
+  "phone": "Phone number",
+  "phoneValidation": "The phone number is invalid!",
+  "productAdvertised": "Product To Be Advertised",
+  "type": "Types",
+  "typeError": "Please choose a type!",
+  "carMake": "Manufacturer",
+  "carMakeError": "The Manufacturer field is mandatory!",
+  "model": "Model",
+  "modelError": "The Model field is mandatory",
+  "bodyType": "Bodytype",
+  "bodyTypeError": "Please choose a Bodytype!",
+  "condition": "Condition",
+  "conditionError": "Please choose a Condition!",
+  "vehicleData": "Vehicle Data",
+  "year": "Year",
+  "yearError": "The Year field is mandatory!",
+  "fuelType": "Fueltype",
+  "fuelTypeError": "The Fueltype field is mandatory!",
+  "transmission": "Transmission",
+  "transmissionError": "The Transmission field is mandatory!",
+  "engineSizeElectronic": "Engine size (kW)",
+  "engineSizeNonElectronic": "Cylinder capacity",
+  "engineSizeError": "Please enter the engine size!",
+  "engineSizeValidation": "Please do not enter a negative number!",
+  "mileage": "Km. clock position",
+  "mileageError": "Please enter the position of the Km. clock!",
+  "mileageValidation": "Please do not enter a negative number!",
+  "color": "Color",
+  "colorError": "The Color field is mandatory!",
+  "colorValidation": "Write only letters!",
+  "moreInformation": "More Information",
+  "feature": "Extras",
+  "featuresMore": "more",
+  "featureError": "The Extras field is mandatory!",
+  "location": "City",
+  "locationError": "The City field is mandatory!",
+  "locationValidation": "Write only letters!",
+  "desiredPrice": "Desired price",
+  "desiredPriceError": "Please enter the Desired price!",
+  "desiredPriceValidation": "Please do not enter a negative number!",
+  "upload": " You can still upload",
+  "uploadMore": "more image(s).",
+  "uploadImages": "Upload images",
+  "uploadErrorMessageSize": "The file size is too large. Maximum 5 MB allowed!",
+  "uploadErrorMessageFormat": "Invalid file format. Only JPG, JPEG and PNG are allowed!",
+  "uploadErrorMessageLength": "You can only choose 3 pictures!",
+  "releaseDate": "Release date",
+
+  "services": "Services",
+  "usefulInformation": "Useful information",
+  "postAnAdd": "Post an ad",
+  "newAdd": "New advertisement",
+  "successMessage": "Successful data recording!",
+  "failure": "Failure",
+  "errorMessage": "The data record was unsuccessful! Try again!",
+
+  "search": "Search",
+  "from": "-from",
+  "to": "-to",
+  "price": "Price",
+  "noMatches": "No matches!",
+  "priceValidation": "Please do not enter a negative number!",
+  "priceError": "The maximum value is less than the minimum value!",
+
+  "searchTerms": "Delete search items!",
+  "like": "Like",
+  "share": "Share",
+  "reportAdvertisement": "Report the ad",
+  "shareAdvertisement": "Share this ad",
+  "printAdvertisement": "Print this ad",
+  "favorites": "Favorites",
+  "data": "Data",
+  "facilities": "Facilities",
+  "basicData": "Basic data",
+  "costs": "Costs",
+  "engineData": "Engine data",
+  "sellerDetails": "Seller details",
+  "offersByType": "Offers by type",
+  "sorryRecommended": "Sorry, no ads recommended",
+
+  "types": [
+    { "value": "car", "viewValue": "Car" },
+    {
+      "value": "light_commercial_vehicle",
+      "viewValue": "Light Commercial Vehicle"
+    },
+    { "value": "commercial_vehicle", "viewValue": "Commercial Vehicle" },
+    { "value": "motorcycle", "viewValue": "Motorcycle" }
+  ],
+
+  "bodyTypes": [
+    { "value": "sedan", "viewValue": "Sedan", "motor": false },
+
+    { "value": "combi", "viewValue": "Combi", "motor": false },
+
+    {
+      "value": "hatchback",
+      "viewValue": "Hatchback",
+      "motor": false
+    },
+
+    {
+      "value": "minivan",
+      "viewValue": "Minivan",
+      "motor": false
+    },
+
+    {
+      "value": "coupe",
+      "viewValue": "Coupe",
+      "motor": false
+    },
+
+    {
+      "value": "cabrio",
+      "viewValue": "Cabrio",
+      "motor": false
+    },
+
+    {
+      "value": "moped",
+      "viewValue": "Moped",
+      "motor": true
+    },
+    {
+      "value": "jeep",
+      "viewValue": "Jeep",
+      "motor": false
+    },
+    {
+      "value": "suv",
+      "viewValue": "Suv",
+      "motor": false
+    },
+
+    {
+      "value": "pickup",
+      "viewValue": "Pickup",
+      "motor": false
+    },
+
+    {
+      "value": "cruiser",
+      "viewValue": "Cruiser",
+      "motor": true
+    },
+
+    {
+      "value": "scooter",
+      "viewValue": "Scooter",
+      "motor": true
+    },
+    {
+      "value": "cross",
+      "viewValue": "Cross",
+      "motor": true
+    },
+
+    {
+      "value": "quad",
+      "viewValue": "Quad",
+      "motor": true
+    },
+
+    {
+      "value": "racing",
+      "viewValue": "Racing",
+      "motor": true
+    }
+  ],
+
+  "conditions": [
+    {
+      "value": "used",
+      "viewValue": "Used"
+    },
+
+    {
+      "value": "new",
+      "viewValue": "New"
+    },
+
+    {
+      "value": "salvage",
+      "viewValue": "Salvage"
+    },
+
+    {
+      "value": "mint",
+      "viewValue": "Mint"
+    }
+  ],
+
+  "fuelTypes": [
+    {
+      "value": "gasoline",
+      "viewValue": "Gasoline"
+    },
+
+    {
+      "value": "diesel",
+      "viewValue": "Diesel"
+    },
+
+    {
+      "value": "gasoline_gas",
+      "viewValue": "Gasoline/Gas"
+    },
+
+    {
+      "value": "diesel_gas",
+      "viewValue": "Diesel/Gas"
+    },
+
+    {
+      "value": "hybrid",
+      "viewValue": "Hybrid"
+    },
+
+    {
+      "value": "hybrid_gasoline",
+      "viewValue": "Hybrid/Gasoline"
+    },
+
+    {
+      "value": "hybrid_diesel",
+      "viewValue": "Hybrid/Diesel"
+    },
+
+    {
+      "value": "electronic",
+      "viewValue": "Electronic"
+    },
+
+    {
+      "value": "ethanol",
+      "viewValue": "Ethanol"
+    },
+
+    {
+      "value": "biodiesel",
+      "viewValue": "Biodiesel"
+    },
+
+    {
+      "value": "gas",
+      "viewValue": "Gas"
+    }
+  ],
+
+  "transTypes": [
+    {
+      "value": "manual",
+      "viewValue": "Manual Transmission"
+    },
+
+    {
+      "value": "automatic",
+      "viewValue": "Automatic Sebességváltó"
+    },
+
+    {
+      "value": "cvt",
+      "viewValue": "Continuously Variable Transmission"
+    },
+
+    {
+      "value": "sat",
+      "viewValue": "Semi-automatic Transmission"
+    },
+
+    {
+      "value": "dct",
+      "viewValue": "Double Clutch Transmission"
+    },
+
+    {
+      "value": "amt",
+      "viewValue": "Automatic Manual Transmission"
+    },
+
+    {
+      "value": "ev",
+      "viewValue": "Electric Vehicle Transmission"
+    },
+
+    {
+      "value": "none",
+      "viewValue": "No Transmission"
+    }
+  ],
+
+  "features": [
+    {
+      "value": "clima",
+      "viewValue": "Clima"
+    },
+
+    {
+      "value": "abs",
+      "viewValue": "ABS"
+    },
+
+    {
+      "value": "alloy_wheels",
+      "viewValue": "Alloy Wheels"
+    },
+
+    {
+      "value": "airbags",
+      "viewValue": "Airbags"
+    },
+
+    {
+      "value": "bluetooth",
+      "viewValue": "Bluetooth"
+    },
+
+    {
+      "value": "tempomat",
+      "viewValue": "Tempomat"
+    },
+
+    {
+      "value": "power_windows",
+      "viewValue": "Power Windows"
+    },
+
+    {
+      "value": "power_door_locks",
+      "viewValue": "Power Door Locks"
+    },
+
+    {
+      "value": "gps",
+      "viewValue": "GPS"
+    },
+
+    {
+      "value": "parking_sensors",
+      "viewValue": "Parking Sensors"
+    },
+
+    {
+      "value": "sunroof",
+      "viewValue": "Sunroof"
+    },
+
+    {
+      "value": "heated_seats",
+      "viewValue": "Heated Seats"
+    },
+
+    {
+      "value": "lane_departure_warning",
+      "viewValue": "Lane Departure Warning"
+    },
+
+    {
+      "value": "aeb",
+      "viewValue": "Automatic Emergency Braking (AEB)"
+    },
+
+    {
+      "value": "satellite_radio",
+      "viewValue": "Satellite Radio"
+    },
+
+    {
+      "value": "usb_ports",
+      "viewValue": "USB Ports"
+    },
+
+    {
+      "value": "apple_carplay_android_auto",
+      "viewValue": "Apple Carplay, Android Auto"
+    },
+
+    {
+      "value": "power_mirrors",
+      "viewValue": "Power Mirrors"
+    },
+
+    {
+      "value": "heated_steering_wheel",
+      "viewValue": "Heated Steering Wheel"
+    }
+  ]
+}
